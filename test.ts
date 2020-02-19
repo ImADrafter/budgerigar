@@ -1,3 +1,0 @@
-const whatsoever = "";
-
-const tutu = {};
