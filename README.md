@@ -1,4 +1,4 @@
-#   Budgeringar 🐤
+#   Budgerigar 🐤
 
 An utility for generate a basic `.eslintrc` file with all the dependencies.
 
