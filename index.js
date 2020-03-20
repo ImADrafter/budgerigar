@@ -10,6 +10,8 @@ const flags = { typescript: "--typescript" };
 const isTypescriptTemplate = cliArgs[0] === flags.typescript;
 */
 
+const isTypescriptTemplate = cliArgs.includes('typescript')
+
 const config = {
   extends: ["prettier"],
   plugins: ["prettier"],
@@ -17,7 +19,7 @@ const config = {
     "prettier/prettier": "error"
   },
   env: { commonjs: true },
-  parserOptions: { ecmaVersion: 2020, sourceType: module }
+  parserOptions: { ecmaVersion: 2020, sourceType: "module" },
 };
 
 const data = JSON.stringify(config);
