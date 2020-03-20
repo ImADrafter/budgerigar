@@ -17,7 +17,7 @@ const config = {
     "prettier/prettier": "error"
   },
   env: { commonjs: true },
-  parserOptions: { ecmaVersion: 2020 }
+  parserOptions: { ecmaVersion: 2020, sourceType: module }
 };
 
 const data = JSON.stringify(config);
