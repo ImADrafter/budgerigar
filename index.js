@@ -10,7 +10,22 @@ const color = {
   reverse: "\x1b[7m"
 };
 
-const isTypescriptTemplate = cliArgs.includes("--typescript");
+const templates = {
+  typescript: "--typescript"
+};
+
+const hasCliArgs = cliArgs.length > 0;
+
+if (hasCliArgs && !cliArgs.includes(templates.typescript))
+  console.log(
+    `Unknown ${
+      cliArgs.length > 1
+        ? "arguments" + cliArgs.map(arg => arg)
+        : "argument" + cliArgs[0]
+    }, using default JS configuration instead`
+  );
+
+const isTypescriptTemplate = cliArgs.includes(templates.typescript);
 
 const typescriptParser = "@typescript-eslint/parser";
 
@@ -33,7 +48,7 @@ fs.writeFile(".eslintrc", data, error => {
   if (isTypescriptTemplate) {
     console.info(
       color.yellow,
-      "⚠ Since you selected the typescript template, remember to install the default parser, with the following command",
+      "⚠ Since you selected the typescript template, remember to install the default parser with the following command",
       color.reset
     );
     console.log(color.reverse, "npm i " + typescriptParser, color.reset);
