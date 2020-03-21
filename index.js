@@ -36,6 +36,6 @@ fs.writeFile(".eslintrc", data, error => {
       "⚠ Since you selected the typescript template, remember to install the default parser, with the following command",
       color.reset
     );
-    console.log(color.reverse, "npm i " + typescriptParser);
+    console.log(color.reverse, "npm i " + typescriptParser, color.reset);
   }
 });
