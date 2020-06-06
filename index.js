@@ -30,10 +30,15 @@ const isTypescriptTemplate = cliArgs.includes(templates.typescript);
 const typescriptParser = "@typescript-eslint/parser";
 
 const config = {
-  extends: ["prettier"],
+  extends: ["prettier", "plugin:prettier/recommended"],
   plugins: ["prettier"],
   rules: {
-    "prettier/prettier": "error"
+    "prettier/prettier": [
+      "error",
+      {
+        singleQuote: true
+      }
+    ]
   },
   env: { commonjs: true },
   parserOptions: { ecmaVersion: 2020, sourceType: "module" },
